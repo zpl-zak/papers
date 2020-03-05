@@ -18,7 +18,8 @@ You can view this content in any browser, say `links` or `firefox`
 This content tries to teach or present a thought using the [Takahashi method](https://en.wikipedia.org/wiki/Takahashi_method)
 of presentation. It focuses on explaining the problem slide-by-slide.
 
-I use [sent](https://tools.suckless.org/sent/) to display my presentations.
+I use a fork of [sent](https://tools.suckless.org/sent/) stored in 
+my [bsd-dotfiles](https://github.com/zaklaus/bsd-dotfiles/) repo to display my presentations.
 
 ### c) Topics
 
@@ -40,4 +41,5 @@ The same applies if you wish to correct any part of the content.
 
 ## What is the license?
 
-Public Domain - [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+See LICENSE file for license and copyright information.
+
