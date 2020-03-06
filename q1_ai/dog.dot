@@ -1,0 +1,16 @@
+digraph dog_fsm {
+    //rankdir=LR;
+    size="26,5";
+    node [shape = circle];
+    Walk [shape = square];
+
+    Walk    -> Run [label="Seen/Hit by enemy"];
+    Run     -> {Attack Leap} [label="Frame trigger"];
+    Attack  -> Run [label="Attack done, hunt"];
+    Attack  -> Walk [label="Attack done, target dead"];
+    Pain    -> Walk [label="Pain time done, hunt"];
+    Run     -> Dead [label="Enemy killed us"];
+    Walk    -> Stand [label="No targets nor path, stand idle"];
+    Run     -> Pain [label="Got hit"];
+}
+

@@ -1,0 +1,35 @@
+QUAKE AI
+
+Frame-based ticking
+Based on model frame sequence
+
+Quake MDL format
+Frames annotated via QuakeC
+
+Anims are composed by chained methods
+Each method has side-effect
+
+Side-effects empower the AI
+They give the AI senses
+
+Quake offers several AI methods:
+=> ai_stand
+=> ai_walk
+=> ai_run
+=> ...
+
+ai_stand
+
+ai_walk
+
+ai_run
+
+Combine them together!
+
+Dog AI FSM
+
+@dog.dot.png
+
+\
+
+Thanks!

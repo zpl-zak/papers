@@ -1,0 +1,18 @@
+digraph {
+  node [ fontname="Handlee" ];
+  subgraph cluster_frontend {
+    label="*Frontend*";
+    React;
+    Bootstrap;
+  }
+      
+  subgraph cluster_backend {
+    label="*Backend*";
+    expressjs;
+    "aws-sdk";
+  }
+
+  React -> expressjs;
+  expressjs -> "aws-sdk" [constraint=false];
+}
+
