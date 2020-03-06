@@ -1,6 +1,6 @@
 digraph dog_fsm {
     //rankdir=LR;
-    size="26,5";
+    size="26,30";
     node [shape = circle];
     Walk [shape = square];
 
