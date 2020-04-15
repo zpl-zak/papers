@@ -1,3 +1,4 @@
+/* CSS adapted from http://fabiensanglard.net/ */
 body {
     font-family: Monospace,
                 Courier;
@@ -6,22 +7,12 @@ body {
     padding-left: 2ch;
     padding-right: 3ch;
     margin: 0 auto;
-    background: #4C566A;
-    color: #E5E9F0;
+    background: #F5F5F0;
 } 
 
 a {
-    color: #88C0D0;
+    color: black;
     font-weight: bold;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-hr {
-    border-color: #D8DEE9;
 }
 
 img {
