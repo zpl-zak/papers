@@ -1,0 +1,44 @@
+<h1>NEON animated models</h1>
+<h2>Overview</h2>
+<p>NEON allows you to load any kind of models (that are backed by Assimp library). One of the cool uses is to load a sequence of meshes (baked from keyframes) to import an animated mesh.</p>
+<p>This tutorial provides basic walkthrough on how to export an animated FBX model and load it in NEON.</p>
+<h2>Prerequisites</h2>
+<ul>
+<li><a href="https://blender.org/">Blender</a> 2.80+</li>
+<li>Blender Batch Wavefront OBJ importer <a href="https://github.com/zaklaus/NEON86/blob/master/utils/blender_batch_import_obj_280.py">plugin</a></li>
+</ul>
+<h2>Prepare your model</h2>
+<p>First, make sure your model has timeline we can export. Usually, Blender models make use of actions to specify animation states. This guide however is only focused on exporting one action per model. </p>
+<p>Don't forget the timeline is the main factor of how many frames will get exported to individual OBJ models. Set timeline frame end appropriately. OBJ exporter ignores frame skipping, adjust your keyframe spacing as well!</p>
+<p><img src="gfx/model.png" alt="" /></p>
+<p>Export your model to Wavefront OBJ, make sure to tick the <strong>Animation</strong> option and create a temporary folder we will export to.</p>
+<p><img src="gfx/obj_export.png" alt="" /></p>
+<p>At this point we should end up with the folder being populated with a sequence of models exported per each frame in our timeline. While we could already load these into NEON and animate, this is not an ideal solution.</p>
+<h2>Convert a sequence of OBJ models into FBX</h2>
+<p>We will use the batch OBJ importer plugin to import all frames into an empty scene: </p>
+<p><img src="gfx/empty.png" alt="" /></p>
+<p>Our scene will get populated by individual meshes representing each frame of our exported animation.</p>
+<p><img src="gfx/obj_import.png" alt="" /></p>
+<p>This is the result of our OBJ import:</p>
+<p><img src="gfx/imported_frames.png" alt="" /></p>
+<p>What we need to do now is to export the whole scene as an FBX model, don't forget to adjust the exporter scale to 0.01. The result is a single FBX model containing all our individual frames baked into meshes.</p>
+<p><img src="gfx/fbx_export.png" alt="" /></p>
+<h2>Load the animated model into NEON</h2>
+<p>We can load the model with the following LUA snippet:</p>
+<pre><code> human = Model(&quot;human.fbx&quot;)
+ humanFrames = human:getMeshes()
+ humanFrame = 1
+ humanCounter = 1</code></pre>
+<pre><code> function drawHuman(wmat)
+    human:drawSubset(humanFrame, wmat)</code></pre>
+<pre><code>    if humanCounter == 6 then
+         humanFrame = humanFrame + 1</code></pre>
+<pre><code>         if humanFrame &gt;= #humanFrames then
+             humanFrame = 1
+         end
+         humanCounter = 0
+     end</code></pre>
+<pre><code>     humanCounter = humanCounter + 1
+ end</code></pre>
+<p>This snippet will load our model and provide a function to draw a specific mesh within. It also provides a very basic animation playback looping over all the frames.</p>
+<p><img src="gfx/preview.png" alt="" /></p>
