@@ -11,6 +11,7 @@ This tutorial provides basic walkthrough on how to export an animated FBX model 
 Prerequisites
 -------------
 
+* [NEON86](https://github.com/zaklaus/NEON86)
 * [Blender](https://blender.org/) 2.80+
 * Blender Batch Wavefront OBJ importer [plugin](https://github.com/zaklaus/NEON86/blob/master/utils/blender_batch_import_obj_280.py)
 
