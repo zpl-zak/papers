@@ -1,14 +1,18 @@
 /* CSS adapted from http://fabiensanglard.net/ */
+
+html {
+    background: #F5F5F0;
+}
+
 body {
     font-family: Monospace,
                 Courier;
-    font-size: 16;              
+    font-size: 16;
     max-width: 900px;
     padding-left: 2ch;
     padding-right: 3ch;
     margin: 0 auto;
-    background: #F5F5F0;
-} 
+}
 
 a {
     color: black;
@@ -27,14 +31,14 @@ p {
 sup {
     vertical-align: 0.3em;
     font-size: 0.65em;
-}   
+}
 
 pre {
     font-family: Monospace,
                 Courier;
-    font-size: 16;            
-    background-color: white; 
-    border: 1px solid Black; 
+    font-size: 16;
+    background-color: white;
+    border: 1px solid Black;
     padding-left: 2ch;
     padding-top: 1ch;
     padding-bottom: 1ch;
@@ -53,12 +57,12 @@ div {
 
 @media (max-width: 500px) {
     *{
-        font-size: 12px; 
+        font-size: 12px;
     }
     pre {
-        font-size: 11px;  
+        font-size: 11px;
     }
-}   
+}
 .title {
     text-decoration: none;
 }
